@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first!
+    h2 Products
+   else
+   table.table.table-Red.table-hover
+                thead
+                    th Product Name
+                    th Product Price
+                    th Product Image
+                    th Update
+                    th Delete
+                 tbody
+                    each pro in products
+                        tr
+                            td=  pro.productname
+                            td = pro.productprice
+                            td =
+                                img(src='/source/'+pro.productImage)
+                             td =
+                                a(href='/update/'+pro.update) Update
+                            td =
+                                form.delete(id=pro.delete)
+                                    button(type='submit') Delete
+          else
+            h3 No User, Login required
+
+  include partials/footer
+
