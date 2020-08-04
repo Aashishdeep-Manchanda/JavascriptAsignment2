@@ -1,0 +1,19 @@
+block content
+  h1 Products Page
+  if(user)
+        p You are logged in
+        form(method='POST' action='/Afterlogin')
+            fieldset
+                label(for='productName') product name:
+                input#productName(type='text' name='productName')
+            fieldset
+                label(for='productPrice')product price:
+                input#productPrice(type='text' name='productPrice')
+            fieldset
+                label(for='productImage') Product Image:
+                input#productImage(type='file' name='productImage')
+            button(type='submit' value='Submit') Submit
+  else
+  h2 No products, try to login first!!!
+  
+  include partials/footer
